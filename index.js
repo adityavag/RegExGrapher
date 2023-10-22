@@ -8,7 +8,13 @@ const regParser = require('automata.js');
 let win;
 
 const createWindow = () => {
-    win = new BrowserWindow();
+    win = new BrowserWindow({
+        height: 600,
+        width: 800,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
     win.loadURL(url.format({
         pathname: path.join(__dirname, 'index.html'),
         protocol: 'file',
