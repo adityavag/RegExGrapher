@@ -1,19 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.min.css" />
-    <title>FLA</title>
+    <title>Formal Language Automata Project</title>
 </head>
+
 <body>
-    Assignment
-    <div class="dfa">
-        CompileDFA
+    <div class="m-4">
+        <ul id="myTab" class="nav nav-tabs">
+            <li class="nav-item">
+                <a href="#compileToDotScript" class="nav-link active" data-bs-toggle="tab">DotScript</a>
+            </li>
+            <li class="nav-item">
+                <a href="#compileToDFA" class="nav-link" data-bs-toggle="tab">DFA</a>
+            </li>
+            <li class="nav-item">
+                <a href="#compileToNFA" class="nav-link" data-bs-toggle="tab">NFA</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade show active" id="compileToDotScript">
+                <h4 class="mt-2">DotScript</h4>
+                <p class="dotScriptResult"></p>
+            </div>
+            <div class="tab-pane fade" id="compileToDFA">
+                <h4 class="mt-2">DFA</h4>
+                <p class="dfaResult"></p>
+            </div>
+            <div class="tab-pane fade" id="compileToNFA">
+                <h4 class="mt-2">NFA</h4>
+                <p class="nfaResult"></p>
+            </div>
+        </div>
+        <hr>
     </div>
-    <script type="text/javascript" src="node_modules\jquery\dist\jquery.min.js"></script>
     <script type="text/javascript" src="node_modules\jquery\dist\jquery.min.js"></script>
     <script type="text/javascript" src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
     <script src="JS/Automata.js"></script>
+    <script src="JS/Functions.js"></script>
+    <script src="JS/GlobalVariables.js"></script>
 </body>
+
 </html>

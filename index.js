@@ -1,9 +1,12 @@
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
+const regParser = require('automata.js');
+const { remote } = require('electron');
+const fs = remote.require('fs');
+
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
-const regParser = require('automata.js');
 
 let win;
 
@@ -12,17 +15,13 @@ const createWindow = () => {
         height: 600,
         width: 800,
         webPreferences: {
-            nodeIntegration: true
+            nodeIntegration: true,
+            contextIsolation: false
         }
     });
-    win.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file',
-        slashes: true
-    }));
+    win.loadFile('index.html');
 
     win.webContents.openDevTools();
-
     win.on('closed', () => {
         win = null;
     })
