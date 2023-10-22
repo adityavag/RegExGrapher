@@ -1,2 +1,1 @@
-console.log("Automata.js")
-console.log($("#dfa"));
+$(".dfa").addClass("bg-success");
