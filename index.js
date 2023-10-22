@@ -3,6 +3,7 @@ const path = require('path');
 const url = require('url');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
+const regParser = require('automata.js');
 
 let win;
 
@@ -13,6 +14,8 @@ const createWindow = () => {
         protocol: 'file',
         slashes: true
     }));
+
+    win.webContents.openDevTools();
 
     win.on('closed', () => {
         win = null;
@@ -30,3 +33,8 @@ app.on('activate', () => {
         createWindow()
     }
 });
+
+// Automata
+var parser = new regParser.RegParser('a+b');
+var dfa = parser.parseToDFA().toDotScript();
+console.log(dfa)
