@@ -1,5 +1,3 @@
-const { toDotScript } = require("automata.js/src/dot-converter");
-const { instance } = require("@viz-js/viz");
 var dfa = dfaParser.parseToDFA();
 var nfa = nfaParser.parseToNFA();
 
@@ -26,6 +24,7 @@ instance().then(viz => {
     $("#nfa-graph-container").append(viz.renderSVGElement(nfa.toDotScript()));
 });
 
-console.log(dfa, nfa)
-console.log(dfa.toDotScript());
+// console.log(dfa)
+// console.log(nfa)
+// console.log(dfa.toDotScript());
 
