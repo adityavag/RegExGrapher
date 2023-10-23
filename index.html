@@ -44,6 +44,7 @@
                         initialState: '0'
                       } -->
                 </p>
+                <div id="dfa-graph-container"></div>
             </div>
             <div class="tab-pane fade" id="compileToNFA">
                 <h4 class="mt-2">NFA</h4>
@@ -61,13 +62,16 @@
                         type: 'NFA'
                       } -->
                 </p>
+                <div id="nfa-graph-container"></div>
             </div>
         </div>
         <hr>
+        </div>
     </div>
     <script>
         window.jQuery = window.$ = require("jquery");
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
     <script type="text/javascript" src="node_modules\jquery\dist\jquery.min.js"></script>
     <script type="text/javascript" src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
     <script src="JS/GlobalVariables.js"></script>
