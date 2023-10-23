@@ -2,9 +2,6 @@ const electron = require('electron');
 const path = require('path');
 const url = require('url');
 const regParser = require('automata.js');
-const { remote } = require('electron');
-const fs = remote.require('fs');
-
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
@@ -19,7 +16,12 @@ const createWindow = () => {
             contextIsolation: false
         }
     });
-    win.loadFile('index.html');
+    // win.loadFile('index.html');
+    win.loadURL(url.format({
+        pathname: path.join(__dirname, 'index.html'),
+        protocol: 'file',
+        slashes: true
+    }));
 
     win.webContents.openDevTools();
     win.on('closed', () => {
@@ -40,6 +42,7 @@ app.on('activate', () => {
 });
 
 // Automata
-var parser = new regParser.RegParser('a+b');
-var dfa = parser.parseToDFA().toDotScript();
-console.log(dfa)
+var dfaParser = new regParser.RegParser('a+b');
+var nfaParser = new regParser.RegParser('a+b');
+var dfa = dfaParser.parseToDFA();
+var nfa = nfaParser.parseToNFA();

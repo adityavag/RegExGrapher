@@ -12,8 +12,11 @@
     <div class="m-4">
         <ul id="myTab" class="nav nav-tabs">
             <li class="nav-item">
-                <a href="#compileToDotScript" class="nav-link active" data-bs-toggle="tab">DotScript</a>
+                <a href="#regEx" class="nav-link active" data-bs-toggle="tab">regEx</a>
             </li>
+            <!-- <li class="nav-item">
+                <a href="#compileToDotScript" class="nav-link" data-bs-toggle="tab">DotScript</a>
+            </li> -->
             <li class="nav-item">
                 <a href="#compileToDFA" class="nav-link" data-bs-toggle="tab">DFA</a>
             </li>
@@ -22,21 +25,49 @@
             </li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane fade show active" id="compileToDotScript">
+            <div class="tab-pane fade show active" id="regEx">
+                <h4 class="mt-2">regEx</h4>
+                <input type="text" class="regExInput"></input>
+            </div>
+            <!-- <div class="tab-pane fade" id="compileToDotScript">
                 <h4 class="mt-2">DotScript</h4>
                 <p class="dotScriptResult"></p>
-            </div>
+            </div> -->
             <div class="tab-pane fade" id="compileToDFA">
                 <h4 class="mt-2">DFA</h4>
-                <p class="dfaResult"></p>
+                <p class="dfaResult">
+                    FSM {
+                        acceptStates: [ '2' ],
+                        transitions: { '0': { '1': 'a' }, '1': { '1': 'a', '2': 'b' } },
+                        type: 'DFA',
+                        numOfStates: 3,
+                        initialState: '0'
+                      }
+                </p>
             </div>
             <div class="tab-pane fade" id="compileToNFA">
                 <h4 class="mt-2">NFA</h4>
-                <p class="nfaResult"></p>
+                <p class="nfaResult">
+                    FSM {
+                        acceptStates: [ '4' ],
+                        transitions: {
+                          '0': { '1': '╬╡' },
+                          '1': { '2': 'a' },
+                          '2': { '1': '╬╡', '3': '╬╡' },
+                          '3': { '4': 'b' }
+                        },
+                        initialState: '0',
+                        numOfStates: 5,
+                        type: 'NFA'
+                      }
+                </p>
             </div>
         </div>
         <hr>
     </div>
+    <script>
+        window.jQuery = window.$ = require("jquery");
+    </script>
     <script type="text/javascript" src="node_modules\jquery\dist\jquery.min.js"></script>
     <script type="text/javascript" src="node_modules\bootstrap\dist\js\bootstrap.bundle.min.js"></script>
     <script src="JS/Automata.js"></script>
