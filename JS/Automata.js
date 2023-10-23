@@ -1,3 +1,3 @@
-// $('.dotScriptResult').text("DotScriptResult");
-// // var parser = new regParser.RegParser('a+b');
-// // var dfa = parser.parseToDFA().toDotScript();
+var dfa = dfaParser.parseToDFA();
+var nfa = nfaParser.parseToNFA();
+console.log(dfa, nfa);

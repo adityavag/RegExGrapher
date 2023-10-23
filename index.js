@@ -42,7 +42,7 @@ app.on('activate', () => {
 });
 
 // Automata
-var dfaParser = new regParser.RegParser('a+b');
-var nfaParser = new regParser.RegParser('a+b');
-var dfa = dfaParser.parseToDFA();
-var nfa = nfaParser.parseToNFA();
+// var dfaParser = new regParser.RegParser('a+b');
+// var nfaParser = new regParser.RegParser('a+b');
+// var dfa = dfaParser.parseToDFA();
+// var nfa = nfaParser.parseToNFA();
