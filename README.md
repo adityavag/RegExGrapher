@@ -15,3 +15,7 @@ The Regex to Automata Converter is a desktop application built with Node.js and 
 - Automata.js
 - Viz.js
 - jQuery
+
+## Contributors
+- Aditya Vardhan Agarwal
+- Ritveek Rana
